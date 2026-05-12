@@ -232,7 +232,7 @@ header {
 /* SALE */
 
 .sale {
-  background-color: var(--primary-color);
+  background-color: var(--white);
 }
 
 .sale__container {
@@ -247,7 +247,7 @@ header {
 }
 
 .sale__content {
-  color: var(--white);
+  color: var(--primary-color);
 }
 
 .sale__content h2 {
@@ -269,6 +269,7 @@ header {
 .sale__content h4 {
   margin-bottom: 2rem;
 }
+
 
 /* FOOTER */
 
