@@ -1,0 +1,376 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>NICE PROPAGANDA</title>
+  </head>
+
+  <body>
+
+    <!-- NAVIGATION -->
+
+<nav>
+
+  <div class="nav__header">
+
+    <div class="nav__logo">
+      <a href="index.php">NICE PROPAGANDA</a>
+    </div>
+
+    <div class="nav__menu__btn" id="menu-btn">
+      <i class="ri-menu-line"></i>
+    </div>
+
+  </div>
+
+  <ul class="nav__links" id="nav-links">
+
+    <li>
+      <a href="index.php">HOME</a>
+    </li>
+
+    <li>
+      <a href="shop.php" class="protected-link">SHOP</a>
+    </li>
+
+    <li>
+      <a href="#fashion">SALE</a>
+    </li>
+
+    <?php if (isset($_SESSION['fullname'])) : ?>
+
+      <li class="welcome__user">
+
+        <p>
+          Welcome back,
+          <?php echo $_SESSION['fullname']; ?>!
+        </p>
+
+        <a href="logout.php">
+          <button class="btn">
+            SIGN OUT
+          </button>
+        </a>
+
+      </li>
+
+    <?php else : ?>
+
+      <li>
+        <button class="btn" id="auth-btn">
+          LOGIN / SIGN UP
+        </button>
+      </li>
+
+    <?php endif; ?>
+
+  </ul>
+
+</nav>
+
+    <!-- HEADER -->
+
+    <header>
+      <div class="section__container header__container">
+        <div class="header__content">
+          <h1>
+            <span>LET'S</span>
+            <br />
+            EXPLORE
+            <br />
+            <span>UNIQUE</span>
+            <br />
+            CLOTHES.
+          </h1>
+
+          <p>LIVE FOR INFLUENTIAL AND INNOVATIVE FASHION!</p>
+
+          <div class="header__btns">
+            <a href="shop.php" class="protected-link">
+  <button class="btn">Shop Now</button>
+</a>
+          </div>
+        </div>
+
+        <div class="header__image">
+          <img src="assets/header.png" alt="header" />
+        </div>
+      </div>
+    </header>
+
+    <!-- BANNER -->
+
+    <section class="banner">
+      <div class="banner__container">
+        <img src="assets/banner-1.jpg" alt="banner" />
+        <img src="assets/banner-2.jpg" alt="banner" />
+        <img src="assets/banner-3.jpg" alt="banner" />
+        <img src="assets/banner-4.jpg" alt="banner" />
+        <img src="assets/banner-5.jpg" alt="banner" />
+        <img src="assets/banner-6.jpg" alt="banner" />
+        <img src="assets/banner-7.jpg" alt="banner" />
+        <img src="assets/banner-8.jpg" alt="banner" />
+      </div>
+    </section>
+
+    <!-- ARRIVALS -->
+
+    <section class="section__container arrival__container" id="catalogue">
+      <h2 class="section__header">NEW ARRIVALS</h2>
+
+      <div class="arrival__grid">
+
+        <!-- CARD 1 -->
+
+       <a href="shop.php" class="arrival__card protected-link">
+          <div class="arrival__image">
+            <img src="assets/arrival-1.jpg" alt="arrival" />
+          </div>
+
+          <div class="arrival__content">
+            <div>
+              <h4>LIMITED RELEASE</h4>
+              <span>Explore Now</span>
+            </div>
+
+            <span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </a>
+
+        <!-- CARD 2 -->
+
+        <a href="shop.php" class="arrival__card protected-link">
+          <div class="arrival__image">
+            <img src="assets/arrival-2.jpg" alt="arrival" />
+          </div>
+
+          <div class="arrival__content">
+            <div>
+              <h4>LONG SLEEVES</h4>
+              <span>Explore Now</span>
+            </div>
+
+            <span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </a>
+
+        <!-- CARD 3 -->
+
+        <a href="shop.php" class="arrival__card protected-link">
+          <div class="arrival__image">
+            <img src="assets/arrival-3.jpg" alt="arrival" />
+          </div>
+
+          <div class="arrival__content">
+            <div>
+              <h4>TEES & T-SHIRT</h4>
+              <span>Explore Now</span>
+            </div>
+
+            <span><i class="ri-arrow-right-line"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SECOND BANNER -->
+
+    <section class="banner">
+      <div class="banner__container">
+        <img src="assets/banner-1.jpg" alt="banner" />
+        <img src="assets/banner-2.jpg" alt="banner" />
+        <img src="assets/banner-3.jpg" alt="banner" />
+        <img src="assets/banner-4.jpg" alt="banner" />
+        <img src="assets/banner-5.jpg" alt="banner" />
+        <img src="assets/banner-6.jpg" alt="banner" />
+        <img src="assets/banner-7.jpg" alt="banner" />
+        <img src="assets/banner-8.jpg" alt="banner" />
+      </div>
+    </section>
+
+    <!-- SALE -->
+
+    <section class="sale" id="fashion">
+      <div class="section__container sale__container">
+        <div class="sale__image">
+          <img src="assets/sale.jpg" alt="sale" />
+        </div>
+
+        <div class="sale__content">
+          <h2><span>FOR SALE</span><br />SALE NOW</h2>
+
+          <p>30% DISCOUNT</p>
+
+          <h4>MAY 12 - MAY 14 2026</h4>
+
+          <div class="sale__btn">
+           <a href="shop.php" class="protected-link">
+  <button class="btn">BUY NOW!</button>
+</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="#">NICE PROPAGANDA</a>
+          </div>
+
+          <p>Producing NICE Products since 2024.</p>
+        </div>
+      </div>
+
+      <div class="footer__bar">
+        Copyright © 2026 Nice Propaganda. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- AUTH MODAL -->
+
+    <div class="auth__modal" id="auth-modal">
+      <div class="auth__container">
+
+        <span class="auth__close" id="close-auth">
+          <i class="ri-close-line"></i>
+        </span>
+
+        <div class="auth__tabs">
+          <button class="auth__tab active" id="login-tab">
+            Login
+          </button>
+
+          <button class="auth__tab" id="signup-tab">
+            Sign Up
+          </button>
+        </div>
+
+        <!-- LOGIN FORM -->
+
+       <form
+  class="auth__form active"
+  id="login-form"
+  action="login.php"
+  method="POST"
+>
+          <h2>Welcome Back</h2>
+
+          <div class="input__group">
+            <input
+  type="email"
+  name="email"
+  placeholder="Email Address"
+  required
+/>
+          </div>
+
+          <div class="input__group">
+           <input
+  type="password"
+  name="password"
+  placeholder="Password"
+  required
+/>
+          </div>
+
+          <button type="submit" class="btn auth__submit">
+            LOGIN
+          </button>
+        </form>
+
+        <!-- SIGNUP FORM -->
+
+        <form
+  class="auth__form"
+  id="signup-form"
+  action="signup.php"
+  method="POST"
+>
+          <h2>Create Account</h2>
+
+          <div class="input__group">
+            <input
+  type="text"
+  name="fullname"
+  placeholder="Full Name"
+  required
+/>
+          </div>
+
+          <div class="input__group">
+          <input
+  type="email"
+  name="email"
+  placeholder="Email Address"
+  required
+/>
+          </div>
+
+          <div class="input__group">
+       <input
+  type="password"
+  name="password"
+  placeholder="Password"
+  required
+/>
+          </div>
+
+          <button type="submit" class="btn auth__submit">
+            SIGN UP
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- SCRIPTS -->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+    
+<script>
+
+const isLoggedIn =
+<?php echo isset($_SESSION['fullname']) ? 'true' : 'false'; ?>;
+
+const protectedLinks =
+document.querySelectorAll(".protected-link");
+
+protectedLinks.forEach((link) => {
+
+  link.addEventListener("click", (e) => {
+
+    if (!isLoggedIn) {
+
+      e.preventDefault();
+
+      document
+        .getElementById("auth-modal")
+        .classList.add("show");
+
+    }
+
+  });
+
+});
+
+</script>
+  </body>
+</html>
